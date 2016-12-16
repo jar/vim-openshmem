@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: C for OpenSHMEM 1.3 API
 " Maintainer: James A. Ross
-" Latest Revision: April 1, 2016
+" Latest Revision: December 16, 2016
 
 if version < 600
 	syntax clear
@@ -28,6 +28,8 @@ syn keyword shmemConst SHMEM_REDUCE_SYNC_SIZE
 syn keyword shmemConst SHMEM_REDUCE_MIN_WRKDATA_SIZE
 syn keyword shmemConst SHMEM_SYNC_VALUE
 syn keyword shmemConst SHMEM_COLLECT_SYNC_SIZE
+syn keyword shmemConst SHMEM_ALLTOALL_SYNC_SIZE
+syn keyword shmemConst SHMEM_ALLTOALLS_SYNC_SIZE
 
 " Redundant constants for backward compatibility
 syn keyword shmemDeprecated _SHMEM_MAJOR_VERSION
