@@ -78,7 +78,7 @@ syn keyword shmemConst SHMEM_CTX_DEFAULT
 syn keyword shmemType shmem_cmp_t
 syn keyword shmemType shmem_ctx_t
 syn keyword shmemType shmem_team_t
-syn keyword shmemFunc shmem_team_config_t
+syn keyword shmemType shmem_team_config_t
 
 """ Library Setup, Exit, and Query Routines
 syn keyword shmemFunc shmem_init
