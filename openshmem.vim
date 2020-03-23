@@ -43,31 +43,31 @@ syn keyword shmemConst SHMEM_CMP_GT
 syn keyword shmemConst SHMEM_CMP_GE
 
 """ Deprecated/Redundant Constants
-syn keyword shmemDeprecated  SHMEM_SYNC_VALUE
-syn keyword shmemDeprecated _SHMEM_SYNC_VALUE
-syn keyword shmemDeprecated  SHMEM_SYNC_SIZE
-syn keyword shmemDeprecated  SHMEM_BCAST_SYNC_SIZE
-syn keyword shmemDeprecated _SHMEM_BCAST_SYNC_SIZE
-syn keyword shmemDeprecated  SHMEM_REDUCE_SYNC_SIZE
-syn keyword shmemDeprecated _SHMEM_REDUCE_SYNC_SIZE
-syn keyword shmemDeprecated  SHMEM_BARRIER_SYNC_SIZE
-syn keyword shmemDeprecated _SHMEM_BARRIER_SYNC_SIZE
-syn keyword shmemDeprecated  SHMEM_COLLECT_SYNC_SIZE
-syn keyword shmemDeprecated _SHMEM_COLLECT_SYNC_SIZE
-syn keyword shmemDeprecated  SHMEM_ALLTOALL_SYNC_SIZE
-syn keyword shmemDeprecated  SHMEM_ALLTOALLS_SYNC_SIZE
-syn keyword shmemDeprecated  SHMEM_REDUCE_MIN_WRKDATA_SIZE
-syn keyword shmemDeprecated _SHMEM_REDUCE_MIN_WRKDATA_SIZE
-syn keyword shmemDeprecated _SHMEM_MAJOR_VERSION
-syn keyword shmemDeprecated _SHMEM_MINOR_VERSION
-syn keyword shmemDeprecated _SHMEM_MAX_NAME_LEN
-syn keyword shmemDeprecated _SHMEM_VENDOR_STRING
-syn keyword shmemDeprecated _SHMEM_CMP_EQ
-syn keyword shmemDeprecated _SHMEM_CMP_NE
-syn keyword shmemDeprecated _SHMEM_CMP_LT
-syn keyword shmemDeprecated _SHMEM_CMP_LE
-syn keyword shmemDeprecated _SHMEM_CMP_GT
-syn keyword shmemDeprecated _SHMEM_CMP_GE
+syn keyword shmemConstDeprecated  SHMEM_SYNC_VALUE
+syn keyword shmemConstDeprecated _SHMEM_SYNC_VALUE
+syn keyword shmemConstDeprecated  SHMEM_SYNC_SIZE
+syn keyword shmemConstDeprecated  SHMEM_BCAST_SYNC_SIZE
+syn keyword shmemConstDeprecated _SHMEM_BCAST_SYNC_SIZE
+syn keyword shmemConstDeprecated  SHMEM_REDUCE_SYNC_SIZE
+syn keyword shmemConstDeprecated _SHMEM_REDUCE_SYNC_SIZE
+syn keyword shmemConstDeprecated  SHMEM_BARRIER_SYNC_SIZE
+syn keyword shmemConstDeprecated _SHMEM_BARRIER_SYNC_SIZE
+syn keyword shmemConstDeprecated  SHMEM_COLLECT_SYNC_SIZE
+syn keyword shmemConstDeprecated _SHMEM_COLLECT_SYNC_SIZE
+syn keyword shmemConstDeprecated  SHMEM_ALLTOALL_SYNC_SIZE
+syn keyword shmemConstDeprecated  SHMEM_ALLTOALLS_SYNC_SIZE
+syn keyword shmemConstDeprecated  SHMEM_REDUCE_MIN_WRKDATA_SIZE
+syn keyword shmemConstDeprecated _SHMEM_REDUCE_MIN_WRKDATA_SIZE
+syn keyword shmemConstDeprecated _SHMEM_MAJOR_VERSION
+syn keyword shmemConstDeprecated _SHMEM_MINOR_VERSION
+syn keyword shmemConstDeprecated _SHMEM_MAX_NAME_LEN
+syn keyword shmemConstDeprecated _SHMEM_VENDOR_STRING
+syn keyword shmemConstDeprecated _SHMEM_CMP_EQ
+syn keyword shmemConstDeprecated _SHMEM_CMP_NE
+syn keyword shmemConstDeprecated _SHMEM_CMP_LT
+syn keyword shmemConstDeprecated _SHMEM_CMP_LE
+syn keyword shmemConstDeprecated _SHMEM_CMP_GT
+syn keyword shmemConstDeprecated _SHMEM_CMP_GE
 
 """ Library Handles
 syn keyword shmemConst SHMEM_TEAM_WORLD
@@ -103,13 +103,13 @@ syn keyword shmemFunc shmem_malloc_with_hints
 syn keyword shmemFunc shmem_calloc
 
 """ Deprecated Initialization and Memory Magement Routines
-syn keyword shmemDeprecated _my_pe
-syn keyword shmemDeprecated _num_pes
-syn keyword shmemDeprecated shmalloc
-syn keyword shmemDeprecated shfree
-syn keyword shmemDeprecated shrealloc
-syn keyword shmemDeprecated shmemalign
-syn keyword shmemDeprecated start_pes
+syn keyword shmemFuncDeprecated _my_pe
+syn keyword shmemFuncDeprecated _num_pes
+syn keyword shmemFuncDeprecated shmalloc
+syn keyword shmemFuncDeprecated shfree
+syn keyword shmemFuncDeprecated shrealloc
+syn keyword shmemFuncDeprecated shmemalign
+syn keyword shmemFuncDeprecated start_pes
 
 """ Team Management Routines
 syn keyword shmemFunc shmem_team_my_pe
@@ -128,31 +128,31 @@ syn keyword shmemFunc shmem_ctx_destroy
 
 """ Remote Memory Access Routines
 syn match shmemFunc '\<shmem_\(put\|p\|iput\|get\|g\|iget\|put_nbi\|get_nbi\)\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(float\|double\|longdouble\|char\|schar\|short\|int\|long\|longlong\|uchar\|ushort\|uint\|ulong\|ulonglong\|int8\|int16\|int32\|int64\|uint8\|uint16\|uint32\|uint64\|size\|ptrdiff\)_\(put\|p\|iput\|get\|g\|iget\|put_nbi\|get_nbi\)\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(put\|iput\|get\|iget\)\(8\|16\|32\|64\|128\)\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(put\|get\)\(8\|16\|32\|64\|128\)_nbi\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(put\|get\)mem\(_nbi\)\{,1}\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(float\|double\|longdouble\|char\|schar\|short\|int\|long\|longlong\|uchar\|ushort\|uint\|ulong\|ulonglong\|int8\|int16\|int32\|int64\|uint8\|uint16\|uint32\|uint64\|size\|ptrdiff\)_\(put\|p\|iput\|get\|g\|iget\|put_nbi\|get_nbi\)\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(put\|iput\|get\|iget\)\(8\|16\|32\|64\|128\)\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(put\|get\)\(8\|16\|32\|64\|128\)_nbi\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(put\|get\)mem\(_nbi\)\?\>'
 
 """ Atomic Memory Operations
 syn match shmemFunc '\<shmem_atomic_\(set\|inc\|add\|and\|or\|xor\)\>'
-syn match shmemFunc '\<shmem_atomic_\(fetch\|compare_swap\|swap\|fetch_inc\|fetch_add\|fetch_and\|fetch_or\|fetch_xor\)\(_nbi\)\{,1}\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(int\|long\|longlong\|uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\|size\|ptrdiff\)_atomic_\(inc\|add\)\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(int\|long\|longlong\|uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\|size\|ptrdiff\)_atomic_\(compare_swap\|fetch_inc\|fetch_add\)\(_nbi\)\{,1}\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(int\|long\|longlong\|uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\|size\|ptrdiff\|float\|double\)_atomic_\(set\)\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(int\|long\|longlong\|uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\|size\|ptrdiff\|float\|double\)_atomic_\(fetch\|swap\)\(_nbi\)\{,1}\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\)_atomic_\(and\|or\|xor\)\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\)_atomic_\(fetch_and\|fetch_or\|fetch_xor\)\(_nbi\)\{,1}\>'
+syn match shmemFunc '\<shmem_atomic_\(fetch\|compare_swap\|swap\|fetch_inc\|fetch_add\|fetch_and\|fetch_or\|fetch_xor\)\(_nbi\)\?\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(int\|long\|longlong\|uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\|size\|ptrdiff\)_atomic_\(inc\|add\)\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(int\|long\|longlong\|uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\|size\|ptrdiff\)_atomic_\(compare_swap\|fetch_inc\|fetch_add\)\(_nbi\)\?\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(int\|long\|longlong\|uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\|size\|ptrdiff\|float\|double\)_atomic_\(set\)\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(int\|long\|longlong\|uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\|size\|ptrdiff\|float\|double\)_atomic_\(fetch\|swap\)\(_nbi\)\?\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\)_atomic_\(and\|or\|xor\)\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(uint\|ulong\|ulonglong\|int32\|int64\|uint32\|uint64\)_atomic_\(fetch_and\|fetch_or\|fetch_xor\)\(_nbi\)\?\>'
 
 """ Deprecated Atomic Memory Operations
-syn match shmemDeprecated '\<shmem_\(fetch\|set\|cswap\|finc\|inc\|fadd\|add\|swap\)\>'
-syn match shmemDeprecated '\<shmem_\(int\|long\|longlong\)_\(cswap\|finc\|inc\|fadd\|add\)\>'
-syn match shmemDeprecated '\<shmem_\(float\|double\|int\|long\|longlong\)_\(fetch\|set\|swap\)\>'
+syn match shmemFuncDeprecated '\<shmem_\(fetch\|set\|cswap\|finc\|inc\|fadd\|add\|swap\)\>'
+syn match shmemFuncDeprecated '\<shmem_\(int\|long\|longlong\)_\(cswap\|finc\|inc\|fadd\|add\)\>'
+syn match shmemFuncDeprecated '\<shmem_\(float\|double\|int\|long\|longlong\)_\(fetch\|set\|swap\)\>'
 
 """ Signaling Operations
-syn match shmemFunc '\<shmem_put_signal\(_nbi\)\{,1}\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}\(float\|double\|longdouble\|char\|schar\|short\|int\|long\|longlong\|uchar\|ushort\|uint\|ulong\|ulonglong\|int8\|int16\|int32\|int64\|uint8\|uint16\|uint32\|uint64\|size\|ptrdiff\)_put_signal\(_nbi\)\{,1}\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}put\(8\|16\|32\|64\|128\)_signal\(_nbi\)\{,1}\>'
-syn match shmemFunc '\<shmem_\(ctx_\)\{,1}putmem_signal\(_nbi\)\{,1}\>'
+syn match shmemFunc '\<shmem_put_signal\(_nbi\)\?\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?\(float\|double\|longdouble\|char\|schar\|short\|int\|long\|longlong\|uchar\|ushort\|uint\|ulong\|ulonglong\|int8\|int16\|int32\|int64\|uint8\|uint16\|uint32\|uint64\|size\|ptrdiff\)_put_signal\(_nbi\)\?\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?put\(8\|16\|32\|64\|128\)_signal\(_nbi\)\?\>'
+syn match shmemFunc '\<shmem_\(ctx_\)\?putmem_signal\(_nbi\)\?\>'
 syn keyword shmemFunc shmem_signal_fetch
 
 """ Collective Routines
@@ -160,11 +160,11 @@ syn keyword shmemFunc shmem_barrier_all
 syn keyword shmemFunc shmem_sync
 syn keyword shmemFunc shmem_team_sync
 syn keyword shmemFunc shmem_sync_all
-syn match shmemFunc '\<shmem_\(alltoall\|alltoalls\|broadcast\|collect\|fcollect\)\(mem\)\{,1}\>'
+syn match shmemFunc '\<shmem_\(alltoall\|alltoalls\|broadcast\|collect\|fcollect\)\(mem\)\?\>'
 
 """ Deprecated Collective Routines
-syn keyword shmemDeprecated shmem_barrier
-syn match shmemDeprecated '\<shmem_\(alltoall\|alltoalls\|broadcast\|collect\|fcollect\)\(32\|64\)\>'
+syn keyword shmemFuncDeprecated shmem_barrier
+syn match shmemFuncDeprecated '\<shmem_\(alltoall\|alltoalls\|broadcast\|collect\|fcollect\)\(32\|64\)\>'
 
 """ Reductions
 syn match shmemFunc '\<shmem_\(float\|double\|longdouble\|char\|schar\|short\|int\|long\|longlong\|uchar\|ushort\|uint\|ulong\|ulonglong\|int8\|int16\|int32\|int64\|uint8\|uint16\|uint32\|uint64\|size\|ptrdiff\)_\(alltoall\|alltoalls\|broadcast\|collect\|fcollect\)\>'
@@ -174,16 +174,16 @@ syn match shmemFunc '\<shmem_\(char\|schar\|short\|int\|long\|longlong\|ptrdiff\
 syn match shmemFunc '\<shmem_\(char\|schar\|short\|int\|long\|longlong\|ptrdiff\|uchar\|ushort\|uint\|ulong\|ulonglong\|int8\|int16\|int32\|int64\|uint8\|uint16\|uint32\|uint64\|size\|float\|double\|longdouble\|complexd\|complexf\)_\(sum\|prod\)_reduce\>'
 
 """ Deprecated Reductions
-syn match shmemDeprecated '\<shmem_\(short\|int\|long\|longlong\)_\(and\|or\|xor\)_to_all\>'
-syn match shmemDeprecated '\<shmem_\(short\|int\|long\|longlong\|float\|double\|longdouble\)_\(max\|min\)_to_all\>'
-syn match shmemDeprecated '\<shmem_\(short\|int\|long\|longlong\|float\|double\|longdouble\|complexd\|complexf\)_\(sum\|prod\)_to_all\>'
+syn match shmemFuncDeprecated '\<shmem_\(short\|int\|long\|longlong\)_\(and\|or\|xor\)_to_all\>'
+syn match shmemFuncDeprecated '\<shmem_\(short\|int\|long\|longlong\|float\|double\|longdouble\)_\(max\|min\)_to_all\>'
+syn match shmemFuncDeprecated '\<shmem_\(short\|int\|long\|longlong\|float\|double\|longdouble\|complexd\|complexf\)_\(sum\|prod\)_to_all\>'
 
 """ Point-To-Point Synchronization Routines
-syn match shmemFunc '\<shmem_\(short_\|int_\|long_\|longlong_\|ushort_\|uint_\|ulong_\|ulonglong_\|int32_\|int64_\|uint32_\|uint64_\|size_\|ptrdiff_\)\{,1}\(wait_until\|test\)\(_all\|_any\|_some\|_all_vector\|_any_vector\|_some_vector\)\{,1}\>'
+syn match shmemFunc '\<shmem_\(short_\|int_\|long_\|longlong_\|ushort_\|uint_\|ulong_\|ulonglong_\|int32_\|int64_\|uint32_\|uint64_\|size_\|ptrdiff_\)\?\(wait_until\|test\)\(_all\|_any\|_some\|_all_vector\|_any_vector\|_some_vector\)\?\>'
 syn keyword shmemFunc shmem_signal_wait_until
 
 """ Deprecated Point-To-Point Synchronization Routines
-syn match shmemDeprecated '\<shmem_\(short_\|int_\|long_\|longlong_\)\{,1}wait\>'
+syn match shmemFuncDeprecated '\<shmem_\(short_\|int_\|long_\|longlong_\)\?wait\>'
 
 """ Memory Ordering Routines
 syn keyword shmemFunc shmem_fence
@@ -197,12 +197,12 @@ syn keyword shmemFunc shmem_set_lock
 syn keyword shmemFunc shmem_test_lock
 
 """ Deprecated Cache Management
-syn keyword shmemDeprecated shmem_clear_cache_inv
-syn keyword shmemDeprecated shmem_set_cache_inv
-syn keyword shmemDeprecated shmem_clear_cache_line_inv
-syn keyword shmemDeprecated shmem_set_cache_line_inv
-syn keyword shmemDeprecated shmem_udcflush
-syn keyword shmemDeprecated shmem_udcflush_line
+syn keyword shmemFuncDeprecated shmem_clear_cache_inv
+syn keyword shmemFuncDeprecated shmem_set_cache_inv
+syn keyword shmemFuncDeprecated shmem_clear_cache_line_inv
+syn keyword shmemFuncDeprecated shmem_set_cache_line_inv
+syn keyword shmemFuncDeprecated shmem_udcflush
+syn keyword shmemFuncDeprecated shmem_udcflush_line
 
 """ Profiling Interface
 syn keyword shmemFunc shmem_pcontrol
@@ -212,4 +212,5 @@ let b:current_syntax = "openshmem"
 hi def link shmemConst Constant
 hi def link shmemFunc  Function
 hi def link shmemType  Type
-hi shmemDeprecated ctermbg=red guibg=#ff0000 ctermfg=white guifg=#ffffff
+hi shmemConstDeprecated cterm=underline ctermfg=DarkRed guifg=Magenta
+hi shmemFuncDeprecated cterm=underline ctermfg=DarkCyan guifg=#00ffff
